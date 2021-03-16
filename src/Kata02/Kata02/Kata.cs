@@ -56,18 +56,18 @@ namespace CodeKata.Kata02
             return -1;
         }
 
-        private static SplitPos[] Split(int[] source)
+        private static SplitOffset[] Split(int[] source)
         {
             // Take half
             int half = source.Length / 2;
 
             // Left hand part, with length exclusive
-            SplitPos lhp = new SplitPos(0, source[0..half]);
+            SplitOffset lhp = new SplitOffset(0, source[0..half]);
 
             // Right hand part
-            SplitPos rhp = new SplitPos(half, source[half..]);
+            SplitOffset rhp = new SplitOffset(half, source[half..]);
 
-            return new SplitPos[] { lhp, rhp };
+            return new SplitOffset[] { lhp, rhp };
         }
     }
 }
