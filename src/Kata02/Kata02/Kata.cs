@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace CodeKata.Kata02
+﻿namespace CodeKata.Kata02
 {
     public static class Kata
     {
@@ -62,10 +60,10 @@ namespace CodeKata.Kata02
             int half = source.Length / 2;
 
             // Left hand part, with length exclusive
-            SplitOffset lhp = new SplitOffset(0, source[0..half]);
+            SplitOffset lhp = new(0, source[0..half]);
 
             // Right hand part
-            SplitOffset rhp = new SplitOffset(half, source[half..]);
+            SplitOffset rhp = new(half, source[half..]);
 
             return new SplitOffset[] { lhp, rhp };
         }
