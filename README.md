@@ -1,4 +1,4 @@
-# CodeKata
+﻿# CodeKata
 
 Solutions for Katas listed on [http://codekata.com/].
 
