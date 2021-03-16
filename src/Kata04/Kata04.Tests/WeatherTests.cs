@@ -2,7 +2,7 @@
 
 namespace CodeKata.Kata04.Tests
 {
-    public class UnitTests
+    public class WeatherTests
     {
         [Fact]
         public void Tests()
@@ -10,7 +10,7 @@ namespace CodeKata.Kata04.Tests
             // Arrange
 
             // Act
-            var weatherdata = DataMunging.GetSmallestSpread();
+            var weatherdata = CodeKata.Kata04.Weather.WeatherData.GetSmallestSpread();
 
             // Assert
             Assert.Equal(14, weatherdata.Day);
