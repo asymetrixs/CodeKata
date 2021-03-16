@@ -9,6 +9,10 @@ namespace CodeKata.Kata02.Tests
         [InlineData(-1, 3, new int[] { })]
         [InlineData(-1, 3, new int[] { 1 })]
         [InlineData(0, 0, new int[] { 0 })]
+        // Second block
+        [InlineData(0, 1, new int[] { 1, 3, 5 })]
+        [InlineData(1, 3, new int[] { 1, 3, 5 })]
+        [InlineData(2, 5, new int[] { 1, 3, 5 })]
         public void Tests(int expectedResult, int lookFor, int[] source)
         {
             // Arrange

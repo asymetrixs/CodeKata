@@ -6,17 +6,68 @@ namespace CodeKata.Kata02
     {
         public static int Chop(int lookFor, int[] source)
         {
-            if(source.Length == 0)
+            // Check length, is empty, return -1
+            if (source.Length == 0)
             {
                 return -1;
             }
 
-            if(source.Length == 1)
+            // Check length, if only one element in array, check that element
+            if (source.Length == 1)
             {
                 return (source[0] == lookFor) ? 0 : -1;
             }
+            else
+            {
+                // Split the array in half
+                var splitted = Split(source);
 
-            return int.MaxValue;
+                // Check each part
+                var rhp = Chop(lookFor, splitted[0].Source);
+                var lhp = Chop(lookFor, splitted[1].Source);
+
+                // If value was found
+                if (rhp > -1)
+                {
+                    // Check if source is a part with an offset
+                    if(splitted[0].Offset > 0)
+                    {
+                        // Add the offset
+                        rhp += splitted[0].Offset;
+                    }
+                    
+                    return rhp;
+                }
+
+                // If value was found
+                if (lhp > -1)
+                {
+                    // Check if source is a part with an offset
+                    if (splitted[1].Offset > 0)
+                    {
+                        // Add the offset
+                        lhp += splitted[1].Offset;
+                    }
+
+                    return lhp;
+                }
+            }
+
+            return -1;
+        }
+
+        private static SplitPos[] Split(int[] source)
+        {
+            // Take half
+            int half = source.Length / 2;
+
+            // Left hand part, with length exclusive
+            SplitPos lhp = new SplitPos(0, source[0..half]);
+
+            // Right hand part
+            SplitPos rhp = new SplitPos(half, source[half..]);
+
+            return new SplitPos[] { lhp, rhp };
         }
     }
 }
