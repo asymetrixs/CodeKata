@@ -25,7 +25,7 @@ namespace CodeKata.Kata04.Tests
             var data = Soccer.SoccerLeagueTable.ParseData();
 
             // Act
-            var soccerDifference = CodeKata.Kata04.Soccer.SoccerLeagueTable.GetNameOfTeamWithSmallestGoalDifference(data);
+            var soccerDifference = Soccer.SoccerLeagueTable.GetNameOfTeamWithSmallestGoalDifference(data);
 
             // Assert
             Assert.Equal("Arsenal", soccerDifference);
