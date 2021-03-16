@@ -1,8 +1,8 @@
-﻿namespace CodeKata.Kata04
+﻿namespace CodeKata.Kata04.Weather
 {
-    public class WeatherData
+    public class Record
     {
-        public WeatherData(int day, int minTemperatur, int maxTemperatur)
+        public Record(int day, int minTemperatur, int maxTemperatur)
         {
             this.Day = day;
             this.MinTemperator = minTemperatur;

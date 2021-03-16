@@ -2,16 +2,16 @@
 using System.IO;
 using System.Text;
 
-namespace CodeKata.Kata04
+namespace CodeKata.Kata04.Weather
 {
-    public static class DataMunging
+    public static class WeatherData
     {
-        public static WeatherData GetSmallestSpread()
+        public static Record GetSmallestSpread()
         {
             // Read file content
-            var fileContent = File.ReadAllLines("weather.dat", Encoding.UTF8);
+            var fileContent = File.ReadAllLines("Weather/weather.dat", Encoding.UTF8);
 
-            var weatherData = new List<WeatherData>();
+            var weatherData = new List<Record>();
 
             // Map file into pocos
             for (int i = 0; i < fileContent.Length; i++)
@@ -36,12 +36,12 @@ namespace CodeKata.Kata04
                 var maxTemperature = int.Parse(line[4..8]);
                 var mintemperature = int.Parse(line[9..14]);
 
-                weatherData.Add(new WeatherData(day, mintemperature, maxTemperature));
+                weatherData.Add(new Record(day, mintemperature, maxTemperature));
             }
 
             // Assume first element has smallest spread, will be used as base to compare against
             // until a smaller is found
-            WeatherData smallestSpread = weatherData[0];
+            Record smallestSpread = weatherData[0];
 
             for (int i = 1; i < weatherData.Count; i++)
             {
