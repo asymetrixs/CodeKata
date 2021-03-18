@@ -10,7 +10,7 @@ namespace CodeKata.Kata06
         /// <summary>
         /// Dictionary will hold all words
         /// </summary>
-        public static ConcurrentDictionary<string, List<string>> Words { get; private set; } = new();
+        public static ConcurrentDictionary<string, List<string>> Words { get; } = new();
 
         /// <summary>
         /// Searches in <paramref name="data"/> for anagrams
