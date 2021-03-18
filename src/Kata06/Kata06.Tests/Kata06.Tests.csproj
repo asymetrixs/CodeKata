@@ -1,14 +1,14 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <Import Project="../../../common.props" />
-
+  
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
 
     <IsPackable>false</IsPackable>
 
-    <AssemblyName>CodeKata.Kata04.Tests</AssemblyName>
+    <AssemblyName>CodeKata.Kata06.Tests</AssemblyName>
 
-    <RootNamespace>CodeKata.Kata04.Tests</RootNamespace>
+    <RootNamespace>CodeKata.Kata06.Tests</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
@@ -25,7 +25,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Kata04\Kata04.csproj" />
+    <ProjectReference Include="..\Kata06\Kata06.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="wordlist.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>
