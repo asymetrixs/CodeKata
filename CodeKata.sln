@@ -21,9 +21,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kata04", "src\Kata04\Kata04
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kata04.Tests", "src\Kata04\Kata04.Tests\Kata04.Tests.csproj", "{DED1559C-8B0B-49E5-BEE4-B6D7E1CC11F7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kata06", "src\Kata06\Kata06\Kata06.csproj", "{3C59C2A5-9C6D-4CAE-BA23-02EE0FCD112D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kata06", "src\Kata06\Kata06\Kata06.csproj", "{3C59C2A5-9C6D-4CAE-BA23-02EE0FCD112D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kata06.Tests", "src\Kata06\Kata06.Tests\Kata06.Tests.csproj", "{47F39A65-1C54-4515-93EF-CF1EA6BBE53C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kata06.Tests", "src\Kata06\Kata06.Tests\Kata06.Tests.csproj", "{47F39A65-1C54-4515-93EF-CF1EA6BBE53C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kata08", "src\Kata08\Kata08\Kata08.csproj", "{041F7874-A868-4DA6-B29D-328D9AF4025F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kata08.Tests", "src\Kata08\Kata08.Tests\Kata08.Tests.csproj", "{FE53E2ED-B22F-440B-925F-DC28824F66F9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -55,6 +59,14 @@ Global
 		{47F39A65-1C54-4515-93EF-CF1EA6BBE53C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{47F39A65-1C54-4515-93EF-CF1EA6BBE53C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{47F39A65-1C54-4515-93EF-CF1EA6BBE53C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{041F7874-A868-4DA6-B29D-328D9AF4025F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{041F7874-A868-4DA6-B29D-328D9AF4025F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{041F7874-A868-4DA6-B29D-328D9AF4025F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{041F7874-A868-4DA6-B29D-328D9AF4025F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE53E2ED-B22F-440B-925F-DC28824F66F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE53E2ED-B22F-440B-925F-DC28824F66F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE53E2ED-B22F-440B-925F-DC28824F66F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE53E2ED-B22F-440B-925F-DC28824F66F9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
