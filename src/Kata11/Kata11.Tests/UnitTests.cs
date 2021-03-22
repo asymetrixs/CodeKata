@@ -60,5 +60,33 @@ namespace CodeKata.Kata11.Tests
             // Assert
             Assert.Equal(expectedSorted, actualSorted);
         }
+
+        [Fact]
+        public void SortBallsAdd25Test()
+        {
+            // Arrange
+            var sortedList = new int[] { 10, 20, 30 };
+            var expectedSorted = new int[] { 10, 20, 25, 30 };
+
+            // Act
+            var actualSorted = Kata11.AddAndSort(sortedList, 25);
+
+            // Assert
+            Assert.Equal(expectedSorted, actualSorted);
+        }
+
+        [Fact]
+        public void SortBallsAdd27Test()
+        {
+            // Arrange
+            var sortedList = new int[] { 10, 20, 30, 40 };
+            var expectedSorted = new int[] { 10, 20, 27, 30, 40 };
+
+            // Act
+            var actualSorted = Kata11.AddAndSort(sortedList, 27);
+
+            // Assert
+            Assert.Equal(expectedSorted, actualSorted);
+        }
     }
 }
