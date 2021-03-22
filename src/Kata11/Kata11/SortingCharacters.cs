@@ -2,7 +2,7 @@
 
 namespace CodeKata.Kata11
 {
-    public class SortingCharacters
+    public static class SortingCharacters
     {
         public static string SortedCharacters(string sortMe)
         {
@@ -12,8 +12,8 @@ namespace CodeKata.Kata11
             // ASCII lower case a-z is 97 - 122
             // We only want ASCII letters
 
-            var asciia = (int)'a';
-            var asciiz = (int)'z';
+            const int asciia = (int)'a';
+            const int asciiz = (int)'z';
 
             // Array representing slots for a-z
             // First slot 0 is a, 1 is b ...
