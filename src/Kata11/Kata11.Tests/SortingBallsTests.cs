@@ -1,9 +1,8 @@
-﻿using System;
-using Xunit;
+﻿using Xunit;
 
 namespace CodeKata.Kata11.Tests
 {
-    public class UnitTests
+    public class SortingBallsTests
     {
         [Fact]
         public void SortBallsAddNothingTest()
@@ -13,7 +12,7 @@ namespace CodeKata.Kata11.Tests
             var expectedSorted = new int[] { };
 
             // Act
-            var actualSorted = Kata11.AddAndSort(sortedList, null);
+            var actualSorted = SortingBalls.AddAndSort(sortedList, null);
 
             // Assert
             Assert.Equal(expectedSorted, actualSorted);
@@ -27,7 +26,7 @@ namespace CodeKata.Kata11.Tests
             var expectedSorted = new int[] { 20 };
 
             // Act
-            var actualSorted = Kata11.AddAndSort(sortedList, 20);
+            var actualSorted = SortingBalls.AddAndSort(sortedList, 20);
 
             // Assert
             Assert.Equal(expectedSorted, actualSorted);
@@ -41,7 +40,7 @@ namespace CodeKata.Kata11.Tests
             var expectedSorted = new int[] { 10, 20 };
 
             // Act
-            var actualSorted = Kata11.AddAndSort(sortedList, 10);
+            var actualSorted = SortingBalls.AddAndSort(sortedList, 10);
 
             // Assert
             Assert.Equal(expectedSorted, actualSorted);
@@ -55,7 +54,7 @@ namespace CodeKata.Kata11.Tests
             var expectedSorted = new int[] { 10, 20, 30 };
 
             // Act
-            var actualSorted = Kata11.AddAndSort(sortedList, 30);
+            var actualSorted = SortingBalls.AddAndSort(sortedList, 30);
 
             // Assert
             Assert.Equal(expectedSorted, actualSorted);
@@ -69,7 +68,7 @@ namespace CodeKata.Kata11.Tests
             var expectedSorted = new int[] { 10, 20, 25, 30 };
 
             // Act
-            var actualSorted = Kata11.AddAndSort(sortedList, 25);
+            var actualSorted = SortingBalls.AddAndSort(sortedList, 25);
 
             // Assert
             Assert.Equal(expectedSorted, actualSorted);
@@ -83,7 +82,7 @@ namespace CodeKata.Kata11.Tests
             var expectedSorted = new int[] { 10, 20, 27, 30, 40 };
 
             // Act
-            var actualSorted = Kata11.AddAndSort(sortedList, 27);
+            var actualSorted = SortingBalls.AddAndSort(sortedList, 27);
 
             // Assert
             Assert.Equal(expectedSorted, actualSorted);

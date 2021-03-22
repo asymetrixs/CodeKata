@@ -2,7 +2,7 @@
 
 namespace CodeKata.Kata11
 {
-    public class Kata11
+    public class SortingBalls
     {
         public static int[] AddAndSort(int[] sortedList, int? number)
         {
