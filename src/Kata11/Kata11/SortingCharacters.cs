@@ -1,4 +1,6 @@
-﻿using System.Text;
+﻿using System.Linq;
+using System.Text;
+using System.Text.RegularExpressions;
 
 namespace CodeKata.Kata11
 {
@@ -24,9 +26,9 @@ namespace CodeKata.Kata11
             for (int i = 0; i < cleanedText.Length; i++)
             {
                 var current = cleanedText[i];
-                
+
                 // Check if invalid letter
-                if(current < asciia || current > asciiz)
+                if (current < asciia || current > asciiz)
                 {
                     continue;
                 }
@@ -48,6 +50,17 @@ namespace CodeKata.Kata11
             }
 
             return sb.ToString();
+        }
+
+        public static string SortedCharactersWithLinq(string sortMe)
+        {
+            // Remove everything that is not a word
+            // Order letter by lower case
+            // Select letter in lower case
+            return string.Concat(
+                Regex.Replace(sortMe, "\\W", string.Empty)
+                    .OrderBy(letter => letter.ToString().ToLowerInvariant())
+                    .Select(letter => letter.ToString().ToLowerInvariant()));
         }
     }
 }
