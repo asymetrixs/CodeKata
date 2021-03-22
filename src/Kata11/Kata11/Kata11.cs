@@ -25,6 +25,7 @@ namespace CodeKata.Kata11
 
                         // Flag that it was added
                         added = true;
+                        break;
                     }
                 }
 
