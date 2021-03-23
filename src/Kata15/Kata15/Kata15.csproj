@@ -1,0 +1,10 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="../../../common.props" />
+  
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <AssemblyName>CodeKata.Kata15</AssemblyName>
+    <RootNamespace>CodeKata.Kata15</RootNamespace>
+  </PropertyGroup>
+
+</Project>
