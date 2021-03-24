@@ -1,6 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace CodeKata.Kata18
 {
@@ -28,7 +28,7 @@ namespace CodeKata.Kata18
         /// <param name="dependencies">Dependencies of this component</param>
         public void Add(char component, char[] dependencies)
         {
-            if(!this._dependencies.ContainsKey(component))
+            if (!this._dependencies.ContainsKey(component))
             {
                 this._dependencies.Add(component, dependencies);
             }
@@ -41,7 +41,7 @@ namespace CodeKata.Kata18
         /// <returns></returns>
         public char[] ResolveDependenciesOf(char component)
         {
-            if(!this._dependencies.ContainsKey(component))
+            if (!this._dependencies.ContainsKey(component))
             {
                 return new char[] { };
             }
@@ -52,11 +52,8 @@ namespace CodeKata.Kata18
             // Get direct dependencies
             var directDependencies = this._dependencies[component];
 
-            // Loop through dependencies and add indirect dependencies
-            for (int i = 0; i < directDependencies.Length; i++)
-            {
-                _recursiveLookup(directDependencies[i]);
-            }
+            // Work in parallel on dependencies and add indirect dependencies
+            Parallel.ForEach(directDependencies, (item) => _recursiveLookup(item));
 
             // Sort and return
             return dependencies.OrderBy(d => d).ToArray();
@@ -83,12 +80,9 @@ namespace CodeKata.Kata18
                 {
                     var componentDependencies = _dependencies[component];
 
-                    // Loop through dependencies
-                    for (int i = 0; i < componentDependencies.Length; i++)
-                    {
-                        // Recursive lookup
-                        _recursiveLookup(componentDependencies[i]);
-                    }
+                    // Work in parallel on dependencies and add indirect
+                    // dependencies with recursive lookup
+                    Parallel.ForEach(componentDependencies, (item) => _recursiveLookup(item));
                 }
             }
         }
