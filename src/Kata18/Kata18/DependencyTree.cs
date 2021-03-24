@@ -71,6 +71,12 @@ namespace CodeKata.Kata18
                 {
                     dependencies.Add(component);
                 }
+                else
+                {
+                    // Return if component was already added
+                    // to prevent infinite circular lookups
+                    return;
+                }
 
                 // Get dependencies of this component
                 if (_dependencies.ContainsKey(component))

@@ -128,5 +128,22 @@ namespace CodeKata.Kata18.Tests
             // Assert
             Assert.Equal(expectedResult, actualResult);
         }
+
+        [Fact]
+        public void PreventInfiniteCircularLoop()
+        {
+            // Arrange
+            var dependencyTree = new DependencyTree();
+            dependencyTree.Add('A', new char[] { 'B' });
+            dependencyTree.Add('B', new char[] { 'C' });
+            dependencyTree.Add('C', new char[] { 'A' });
+            var expectedResult = new char[] { 'A', 'B', 'C' };
+
+            // Act
+            var actualResult = dependencyTree.ResolveDependenciesOf('A');
+
+            // Assert
+            Assert.Equal(expectedResult, actualResult);
+        }
     }
 }
