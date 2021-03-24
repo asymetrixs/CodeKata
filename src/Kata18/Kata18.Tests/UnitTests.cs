@@ -37,5 +37,27 @@ namespace CodeKata.Kata18.Tests
             // Assert
             Assert.Equal(expectedResult, actualResult);
         }
+
+
+        [Fact]
+        public void ResolveA()
+        {
+            // Arrange
+            var dependencyTree = new DependencyTree();
+            dependencyTree.Add('A', new char[] { 'B', 'C' });
+            dependencyTree.Add('B', new char[] { 'C', 'E' });
+            dependencyTree.Add('C', new char[] { 'G' });
+            dependencyTree.Add('D', new char[] { 'A', 'F' });
+            dependencyTree.Add('E', new char[] { 'F' });
+            dependencyTree.Add('F', new char[] { 'H' });
+
+            var expectedResult = new char[] { 'B', 'C', 'E', 'F', 'G', 'H' };
+
+            // Act
+            var actualResult = dependencyTree.ResolveDependenciesOf('A');
+
+            // Assert
+            Assert.Equal(expectedResult, actualResult);
+        }
     }
 }

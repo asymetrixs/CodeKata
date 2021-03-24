@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace CodeKata.Kata18
 {
@@ -45,7 +46,45 @@ namespace CodeKata.Kata18
                 return new char[] { };
             }
 
-            throw new NotImplementedException();
+            // Will hold all dependencies
+            var dependencies = new HashSet<char>();
+
+            // Get direct dependencies
+            var directDependencies = this._dependencies[component];
+
+            // Loop through dependencies and add indirect dependencies
+            for (int i = 0; i < directDependencies.Length; i++)
+            {
+                _recursiveLookup(directDependencies[i]);
+            }
+
+            // Sort and return
+            return dependencies.OrderBy(d => d).ToArray();
+
+            /*
+             * Using inline-function functionality for resolution
+             */
+            void _recursiveLookup(char component)
+            {
+                // Add dependency if not already present
+                if (!dependencies.Contains(component))
+                {
+                    dependencies.Add(component);
+                }
+
+                // Get dependencies of this component
+                if (_dependencies.ContainsKey(component))
+                {
+                    var componentDependencies = _dependencies[component];
+
+                    // Loop through dependencies
+                    for (int i = 0; i < componentDependencies.Length; i++)
+                    {
+                        // Recursive lookup
+                        _recursiveLookup(componentDependencies[i]);
+                    }
+                }
+            }
         }
     }
 }
