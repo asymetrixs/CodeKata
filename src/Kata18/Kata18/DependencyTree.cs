@@ -38,7 +38,7 @@ namespace CodeKata.Kata18
         /// Resolves dependencies of a component
         /// </summary>
         /// <param name="component">Component</param>
-        /// <returns></returns>
+        /// <returns>List of dependencies</returns>
         public char[] ResolveDependenciesOf(char component)
         {
             if (!this._dependencies.ContainsKey(component))
