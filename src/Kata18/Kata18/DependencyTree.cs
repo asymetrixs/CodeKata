@@ -64,15 +64,18 @@ namespace CodeKata.Kata18
             void _recursiveLookup(char component)
             {
                 // Add dependency if not already present
-                if (!dependencies.Contains(component))
+                lock (dependencies)
                 {
-                    dependencies.Add(component);
-                }
-                else
-                {
-                    // Return if component was already added
-                    // to prevent infinite circular lookups
-                    return;
+                    if (!dependencies.Contains(component))
+                    {
+                        dependencies.Add(component);
+                    }
+                    else
+                    {
+                        // Return if component was already added
+                        // to prevent infinite circular lookups
+                        return;
+                    }
                 }
 
                 // Get dependencies of this component
